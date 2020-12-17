@@ -10,7 +10,7 @@ RUN git clone https://github.com/rwth-acis/las2peer-registry-contracts.git -b ma
 WORKDIR /app-cache/las2peer-registry-contracts
 RUN npm install
 WORKDIR /app-cache
-RUN git clone https://github.com/rwth-acis/las2peer.git -b ba-matta
+RUN git clone https://github.com/Leogomat/las2peer/ -b ba-matta
 #RUN git clone https://github.com/rwth-acis/las2peer/
 WORKDIR /app-cache/las2peer
 RUN git checkout ba-matta
@@ -46,8 +46,8 @@ RUN npm install
 
 WORKDIR /app
 # cache bust, see https://stackoverflow.com/a/39278224
-ADD https://api.github.com/repos/rwth-acis/las2peer/git/refs/heads/master version.json
-RUN git clone https://github.com/rwth-acis/las2peer.git -b master
+ADD https://api.github.com/repos/Leogomat/las2peer/git/refs/heads/ba-matta version.json
+RUN git clone https://github.com/Leogomat/las2peer.git -b ba-matta
 COPY --from=buildcache --chown=build:build /app-cache/las2peer/webconnector/frontend/node_modules /app/las2peer/webconnector/frontend/node_modules
 
 WORKDIR /app/las2peer
