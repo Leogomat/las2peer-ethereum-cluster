@@ -10,8 +10,8 @@ RUN git clone https://github.com/rwth-acis/las2peer-registry-contracts.git -b ma
 WORKDIR /app-cache/las2peer-registry-contracts
 RUN npm install
 WORKDIR /app-cache
-# RUN git clone https://github.com/rwth-acis/las2peer/ -b develop
-RUN git clone https://github.com/rwth-acis/las2peer/
+RUN git clone https://github.com/rwth-acis/las2peer.git -b ba-matta
+#RUN git clone https://github.com/rwth-acis/las2peer/
 WORKDIR /app-cache/las2peer
 RUN git checkout tags/v1.0.1
 RUN ant build-only-no-bundle
